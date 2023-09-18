@@ -1,11 +1,11 @@
 ---
-title: "14 Architectural Design Ideas for a Spacious Interior"
-excerpt: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
-publishDate: "2022-12-30T11:39:36.050Z"
+title: "Como usar el control Rich Text Editor en Power Pages"
+excerpt: "El control Rich Text Editor en Dynamics 365/Model Driven Apps es una nueva característica muy interesante, especialmente para proyectos de Power Pages en los que hay que realizar una gran carga en la gestión de contenidos. Incluso algunas opciones básicas como pueden ser los headings, las listas, las listas numeradas y las tablas pueden convertirse en un suplicio sin este tipo de control. Pues bien, estos controles Rich Text Editor son soportados ahora en los Formularios Básicos y también en los Formularios de Varios Pasos"
+publishDate: "2023-09-17T12:53:36.050Z"
 image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=927&h=927"
-category: "pro-code"
+category: "power-pages"
 author: "sergio-garcia"
-tags: [design, architecture, interior]
+tags: [Liquid, CSS, Configuración]
 ---
 
 “What’s the meaning of life?” is a cliche philosophical question, but it touches on something fundamental about how humans relate to the world around them. People want to know that there’s significance to their lives, but not necessarily in any grandiose sense. Most of us just want to feel that there’s value in getting up and being active each day. We search for signs that our existence is a net good in the world, even if only on a minuscule scale in the grander scheme of the universe.

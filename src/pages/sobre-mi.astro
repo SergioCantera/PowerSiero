@@ -5,48 +5,72 @@ import { Image } from "@astrojs/image/components";
 import { authors } from "@data/authors";
 import Pagetitle from "@components/pagetitle.astro";
 import Link from "@components/ui/link.astro";
+import Social from "@components/social.astro";
+import Certificationlist from "@components/certificationlist.astro";
 ---
 
 <Layout title="Sobre mí">
   <Container>
     <Pagetitle>
       <Fragment slot="title">Sobre mí</Fragment>
-      <Fragment slot="desc">Soy un apasionado de Power Platform y el desarrollo web.</Fragment>
+      <Fragment slot="desc">
+        Apasionado ❤️ de Power Platform y el desarrollo web 💻.
+      </Fragment>
     </Pagetitle>
+    <div class="flex gap-6">
+      <div class="mx-auto max-w-xl text-center mt-14">
+        <p class="text-lg text-justify leading-relaxed text-gray-600 dark:text-gray-400">
+          Hola y bienvenido/a a mi pequeña contribución a la comunidad Power Platform. Mi nombre es Sergio García y en este
+          blog podrás encontrar algunos descubrimientos y lecciones aprendidas en mi experiencia con la plataforma, además
+          de pequeños consejos que podrían ayudarte en tu camino. Espero que te sean de gran utilidad, y si tienes alguna duda 
+          o simplemente quisieras compartir conmigo tus pensamientos acerca de Power Platform, puedes 
+          <span class="text-blue-500 underline"><a href="/contacto">contactarme</a></span>. Estaré encantado de escucharte.
+        </p>
+        <h4 class="mt-6 font-semibold text-xl text-left">Mi trayectoria</h4>
+        <p class="mt-1 text-lg text-justify leading-relaxed text-gray-600 dark:text-gray-400">
+          Descubrí este mundo de Power Platform en 2018. Al principio mi aprendizaje fue totalmente autodidacta,
+          escuchando, viendo vídeos y leyendo a referentes de la comunidad. Después de unos primeros años en los apliqué mis conocimientos
+          sobre Power Apps y Power Automate en la digitalización de procesos en la industria alimentaria, dí el salto al mundo
+          de la consultoría en 2020 y desarrollé funciones como consultor técnico/funcional y, posteriormente, como Technical Lead
+          en Power Platform. En este momento estoy trabajando como Team Leader en ENCAMINA, y estoy especializado en Power Apps,
+          Power Pages y Power Automate.
+        </p>
+        <p class="mt-3 text-lg text-justify leading-relaxed text-gray-600 dark:text-gray-400">
+          Durante todo este camino he tenido la suerte de coincidir con grandes profesionales de los que he aprendido
+          muchísmimo y a los que estoy muy agradecido. Por eso, este blog pretende devolver parte de ese conocimiento adquirido
+          a esta gran comunidad.
+        </p>
+        
+      </div>
+      <div class="grid gap-10 mx-auto max-w-md mt-14 pt-4">
+        {
+          authors.slice(0, 3).map((item) => (
+            <div class="group">
+              <div class="w-[80%] aspect-square mx-auto">
+                <Image
+                  src={item.image}
+                  format="avif"
+                  width={580}
+                  height={580}
+                  alt="Team"
+                  class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+                />
+              </div>
 
-    <div class="grid gap-10 mx-auto max-w-md mt-12">
-      {
-        authors.slice(0, 3).map((item) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Image
-                src={item.image}
-                format="avif"
-                width={580}
-                height={580}
-                alt="Team"
-                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h3 class="text-sm text-gray-500 dark:text-gray-300">
-                {" "}
-                {item.name}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
+              <div class="mt-4 text-center">
+                <div class="mt-8">
+                  <Link href="/contacto" style="primary">Contáctame</Link>
+                </div>
+                <div class="flex justify-center gap-5 mt-8">
+                  <Social size="w-8 h-8" />
+                </div>
+                <div class="mt-12">
+      <Certificationlist />
     </div>
-
-    <div class="mx-auto max-w-xl text-center mt-14">
-      <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-        Team Leader y arquitecto en Power Platform, especialista en Power Apps, Power Pages y Power Automate.
-        Experiencia en el diseño, gestión y desarrollo de proyectos basados en Power Platform. 
-      </p>
-      <div class="mt-8">
-        <Link href="/contacto" style="primary">Contáctame</Link>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </Container>

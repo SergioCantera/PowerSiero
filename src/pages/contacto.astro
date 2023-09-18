@@ -4,13 +4,16 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Contactform from "@components/contactform.astro";
 import Pagetitle from "@components/pagetitle.astro";
+import Social from "@components/social.astro";
 ---
 
 <Layout title="Contacto">
   <Container>
     <Pagetitle>
       <Fragment slot="title">Contacto</Fragment>
-      <Fragment slot="desc">Puedes escribirme y estaré encantado de ayudarte</Fragment>
+      <Fragment slot="desc">
+        Puedes escribirme y estaré encantado de ayudarte
+      </Fragment>
     </Pagetitle>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
@@ -20,24 +23,31 @@ import Pagetitle from "@components/pagetitle.astro";
         </h2>
         <p
           class="text-lg leading-relaxed text-gray-500 dark:text-gray-400 mt-3">
-          ¿Te gustaría comentarme algo? Estoy aquí para ayudarte. Rellena el formulario o envíame un email.
+          ¿Te gustaría preguntarme alguna duda sobre algún post de este blog?
+          ¿O tienes algún pensamiento sobre Power Platform que quieras compartir conmigo?
+          Estoy aquí para ayudarte. Puedes ponerte en contacto conmigo rellenando este formulario o
+          a través de 
+          <span class="text-blue-500"><a href="https://www.linkedin.com/in/sergio-garc%C3%ADa-fonseca/">Linkedin</a></span>.
         </p>
         <div class="mt-5">
-          <div
+          <!--<div
             class="flex items-center mt-2 space-x-2 text-gray-600 dark:text-gray-300">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
             <span>Pola de Siero, Asturias 33510</span>
-          </div><div
+          </div>
+          <div
             class="flex items-center mt-2 space-x-2 text-gray-600 dark:text-gray-300">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
               href="mailto:hello@stablotemplate.com">sgfcantera@hotmail.com</a
             >
-          </div><div
+          </div>
+          <div
             class="flex items-center mt-2 space-x-2 text-gray-600 dark:text-gray-300">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
               href="tel:+1 (987) 4587 899">+34 606 688 284</a
             >
-          </div>
+          </div>-->
+          
         </div>
       </div>
       <div>

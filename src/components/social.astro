@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  size: string;
+}
+
+interface SocialMenu {
+  label: string;
+  href: string;
+  logo: string;
+}
+
+const socialMenu: SocialMenu[] = [
+  {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/sergio-garc%C3%ADa-fonseca/",
+    logo: "simple-icons:linkedin",
+  },
+  {
+    label: "Github",
+    href: "https://github.com/SergioCantera",
+    logo: "simple-icons:github",
+  },
+];
+
+const { size }: Props = Astro.props;
+---
+
+{
+  socialMenu.map((item) => {
+    return (
+      <div>
+        <a href={item.href} class="cursor-pointer">
+          <Icon
+            class={`${size} text-black bg-white dark:text-white dark:bg-black`}
+            name={item.logo}
+          />
+        </a>
+      </div>
+    );
+  })
+}

@@ -1,0 +1,26 @@
+---
+import { Image } from "@astrojs/image/components";
+import { certifications } from "@data/certification";
+---
+
+<ul class="flex flex-wrap justify-center">
+  { certifications.map(item => {
+    return(
+      <li>
+        <a href={item.href}>
+          <div class="flex flex-col px-6 py-2 flex-wrap hover:scale-105 hover:duration-300">
+            <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={40}
+                  height={40}
+                  loading="lazy"
+                  class="rounded-full self-center"
+                />
+            <h4 class="text-sm text-gray-600 dark:text-gray-400">{item.id}</h4>
+          </div>
+          </a>
+      </li>
+    )
+  })}
+</ul>
