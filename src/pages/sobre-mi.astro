@@ -1,12 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { authors } from "@data/authors";
 import Pagetitle from "@components/pagetitle.astro";
 import Link from "@components/ui/link.astro";
 import Social from "@components/social.astro";
 import Certificationlist from "@components/certificationlist.astro";
+import authorImage from '@assets/authors/sergio.webp';
 ---
 
 <Layout title="Sobre mí">
@@ -46,12 +47,13 @@ import Certificationlist from "@components/certificationlist.astro";
         {
           authors.slice(0, 3).map((item) => (
             <div class="group">
-              <div class="w-[80%] aspect-square mx-auto">
+              <div class="w-[80%] aspect-landscape mx-auto">
                 <Image
-                  src={item.image}
+                  src={authorImage}
                   format="avif"
                   width={580}
                   height={580}
+                  loading= "eager"
                   alt="Team"
                   class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
                 />

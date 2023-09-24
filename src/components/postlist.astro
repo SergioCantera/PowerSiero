@@ -1,7 +1,7 @@
 ---
 import cx from "classnames";
 
-import { Image, Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import Label from "@components/ui/label.astro";
 import type { Author } from "@data/authors";
 import { authors } from "@data/authors";
@@ -9,9 +9,10 @@ import type { Category } from "@data/category";
 import { categories } from "@data/category";
 import { getFormattedDate } from "@utils/all";
 import { Icon } from "astro-icon";
+import authorImage from "@assets/authors/sergio.webp"
 
 const { post, aspect, preloadImage } = Astro.props;
-const author = authors.find((item) => item.slug === post.data.author) as Author;
+const author = authors.find((item) => item.slug === post.data.author) as Author
 const category = categories.find(
   (item) => item.slug === post.data.category
 ) as Category;
@@ -20,17 +21,17 @@ const category = categories.find(
 <div class="cursor-pointer group">
   <div
     class={cx(
-      "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
-      aspect === "landscape" ? "aspect-video" : "aspect-square"
+      "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105",
+      aspect === "landscape" ? "aspect-video" : "aspect-4/3"
     )}>
     <a href={"/blog/" + post.slug}>
       {
         post.data.image ? (
-          <Picture
+          <Image
             src={post.data.image}
-            widths={[200, 400, 800]}
+            width="480"
+            height="480"
             sizes="(max-width: 640px) 90vw, 480px"
-            aspectRatio={aspect === "landscape" ? "16:9" : "1:1"}
             alt="Thumbnail"
             loading={preloadImage ? "eager" : "lazy"}
             class="w-full h-full rounded-md"
@@ -77,7 +78,7 @@ const category = categories.find(
         {
           author.image && (
             <Image
-              src={author.image}
+              src={authorImage}
               alt="Author Photo"
               width={40}
               height={40}
